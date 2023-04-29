@@ -1,0 +1,43 @@
+.logo{
+    color: #92a4b1;
+    font-size: 40px;
+    margin-right: 10%;
+    &:hover{
+        color: white;
+    }
+}
+
+.nav_item{
+    align-self: center;
+    padding: 5px 10px;
+    border-radius: 3px;
+    color: #92a4b1;
+    font-size: 18px;
+    &:hover{
+        background-color: #141414;
+        color: rgb(255, 255, 255);
+    }
+}
+
+.me-auto{
+
+    display: flex;
+    gap: 20px;
+}
+.nav-link{
+    color: #92a4b1;
+
+    &:hover{
+        color: white;
+    }
+}
+
+.dropdown-menu{
+    background-color: #000;
+}
+
+.navbar-nav .show>.nav-link{
+    
+        color: white;
+
+}

@@ -1,25 +1,33 @@
-import logo from './logo.svg';
 import './App.css';
+import Main from './view/pages/Main/Main';
+import { useState } from 'react';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+    const [movies, setMovies] = useState([]);
+    const [moviesList, setMoviesList] = useState([]);
+    const [popCartoonsList, setPopCartoonsList] = useState([]);
+    const [popAnimeList, setPopAnimeList] = useState([]);
+    const [tvList, setTVList] = useState([]);
+
+
+    return (
+        <div className="App">
+            <Main 
+                moviesList={moviesList} 
+                setMoviesList={setMoviesList} 
+
+                popCartoonsList={popCartoonsList} 
+                setPopCartoonsList={setPopCartoonsList}
+                
+                popAnimeList={popAnimeList}
+                setPopAnimeList={setPopAnimeList}
+
+                tvList={tvList}
+                setTVList={setTVList}
+                />
+        </div>
+    );
 }
 
 export default App;

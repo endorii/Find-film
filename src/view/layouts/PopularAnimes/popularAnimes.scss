@@ -1,0 +1,59 @@
+h2 {
+    text-align: left;
+    padding-top: 50px;
+    padding-left: 100px;
+}
+
+.anime{
+    position: relative;
+    margin: 0 auto;
+    width: 90%;
+
+    &_title{
+        color: #92a4b1
+    }
+    
+    .scroll-button {
+        color: aliceblue;
+        position: absolute; 
+        top: 300px; 
+        right: -20px;
+        z-index: 1;
+        img{
+            color: #fff;
+            width: 80px;
+            height: 80px;
+        }
+    }
+
+    &_list{  
+        overflow-x: scroll;
+        padding: 20px 60px;
+        overflow: hidden;
+        gap: 10px;
+        scroll-behavior: smooth;
+        display: flex;
+
+        &-item{
+            border-radius: 5px;
+            padding: 30px;
+            background-color: #222b33;
+            width: 300px;
+            height: auto;
+
+            &-img{
+                img{
+                    width: 210px;
+                    height: 300px;
+                }
+            }
+
+            &-title{
+                color: #92a4b1;
+                margin: 15px 15px 0 15px;
+                font-weight: 500;
+                font-size: 17px;
+            }
+        }
+    }
+}
