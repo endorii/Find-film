@@ -1,4 +1,12 @@
+html{
+	background-color: #1e2025;;
+}
+
 .App {
 	background-color: #1e2025;
   	text-align: center;
+}
+
+a{
+	text-decoration: none;
 }

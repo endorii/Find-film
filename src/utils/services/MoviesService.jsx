@@ -11,6 +11,16 @@ const MoviesService = () => {
 		return res;
 	};
 
+	const getFilmById = async (id) => {
+		const res = await request(`https://api.themoviedb.org/3/movie/${id}?api_key=a3763a373f264212ce3c4f8cf0b4ade1&language=en-US`);
+		return res;
+	}
+
+	const getVideo = async (id) => {
+		const res = await request(`https://api.themoviedb.org/3/movie/${id}/videos?${_apiKey}&language=en-US`);
+		return res;
+	}
+
 	const getPopularCartoons = async () => {
 		const res = await request(`https://api.themoviedb.org/3/discover/movie?${_apiKey}&with_genres=16`);
 		return res;
@@ -28,7 +38,7 @@ const MoviesService = () => {
 		return res;
 	};
 
-    return {getResponse, getPopularCartoons, getPopularAnime, getPopularSeries};
+    return {getResponse, getPopularCartoons, getPopularAnime, getPopularSeries, getFilmById, getVideo};
 
 }
 
