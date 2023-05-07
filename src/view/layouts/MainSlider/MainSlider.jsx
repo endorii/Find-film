@@ -1,8 +1,15 @@
 import React, { Component } from "react";
 import Slider from "react-slick";
 import './mainSlider.scss'
+import MoviesService from "../../../utils/services/MoviesService";
 
 export default class SimpleSlider extends Component {
+
+    // componentDidMount(){
+    //     const {getResponse} = MoviesService();
+    //     // getResponse().then(res => res.results.)
+    // }
+
     render() {
         const settings = {
             arrows: true,

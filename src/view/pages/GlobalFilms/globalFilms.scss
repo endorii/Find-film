@@ -1,50 +1,26 @@
-h2 {
-    text-align: left;
-    padding-top: 50px;
-    padding-left: 100px;
-}
-
-.popular{
+.global{
     position: relative;
-    margin: 0 auto;
+    margin: 30px auto;
     width: 90%;
 
     &_title{
         color: #92a4b1
     }
-    
-    .scroll-button {
-        color: aliceblue;
-        position: absolute; 
-        top: 300px; 
-        right: -20px;
-        z-index: 1;
-        
-        img{
-            color: #fff;
-            width: 60px;
-            height: 60px;
-            filter: drop-shadow(-3px 3px 6px black);
-            cursor: pointer;
-        }
-    }
 
     &_list{  
-        scroll-snap-align: center;
-        
+        display: flex;
+        gap: 30px;
+        flex-wrap: wrap;
         &-cartoons, &-anime, &-series, &-films{
-
+            overflow-x: scroll;
             padding: 20px 60px;
             overflow: hidden;
             gap: 10px;
             scroll-behavior: smooth;
-            // overflow-x: scroll;
-            scroll-snap-type: x mandatory;
             display: flex;
         }
 
         &-item{
-            
             border-radius: 5px;
             padding: 30px;
             background-color: rgba(0, 0, 0, 0.2);
@@ -71,6 +47,41 @@ h2 {
                 &:hover{
                     color: #fff;
                 }
+            }
+        }
+    }
+}
+
+.genres{
+
+    & h3{
+        margin-top: 0px;
+        margin-bottom: 20px;
+        font-size: 40px;
+        text-align: center;
+    }
+    &_list{
+        padding: 0 200px;
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        &-item{
+
+            button{
+                padding: 5px 30px;
+                font-size: 16px;
+                border-radius: 10px;
+                color: #92a4b1;
+                border: 3px solid rgba(0, 0, 0, 0.05);
+                background-color: rgba(0, 0, 0, 0.2);
+
+                &:hover{
+                    color: #fff;
+                    background-color: rgba(0, 0, 0, 0.5);
+                }
+                // border: none;
             }
         }
     }

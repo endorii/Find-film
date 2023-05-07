@@ -38,7 +38,17 @@ const MoviesService = () => {
 		return res;
 	};
 
-    return {getResponse, getPopularCartoons, getPopularAnime, getPopularSeries, getFilmById, getVideo};
+	const getFilmsByGenreId = async (genreId, widthout, origLang) => {
+		const res = await request(`https://api.themoviedb.org/3/discover/movie?${_apiKey}&sort_by=popularity.desc${origLang}&with_genres=${genreId}&without_genres=${widthout}}`);
+		return res;
+	};
+
+	// const getPopularPosters = async () => {
+	// 	const res = await request(``);
+	// 	return res;
+	// }
+
+    return {getResponse, getPopularCartoons, getPopularAnime, getPopularSeries, getFilmById, getVideo, getFilmsByGenreId};
 
 }
 
