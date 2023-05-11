@@ -2,6 +2,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import MovieSearch from '../../../modules/MovieSearch/MovieSearch';
 
 import './navbar.scss';
 
@@ -9,7 +10,7 @@ const MainNavbar = () => {
     return(
         <Navbar className='nav_main' expand="lg">
             <Container>
-                <Navbar.Brand href="/" className='logo'>FilmFind</Navbar.Brand>
+                <Navbar.Brand href="/" className='logo'>Film.Find</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="me-auto">
@@ -22,6 +23,9 @@ const MainNavbar = () => {
                     </NavDropdown>
                 </Nav>
                 </Navbar.Collapse>
+
+                <MovieSearch/>
+                
             </Container>
         </Navbar>
     )

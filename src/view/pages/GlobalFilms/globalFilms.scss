@@ -54,6 +54,7 @@
 
 .genres{
 
+    margin-top: 30px;
     & h3{
         margin-top: 0px;
         margin-bottom: 20px;
@@ -66,6 +67,7 @@
         gap: 10px;
         justify-content: center;
         flex-wrap: wrap;
+        margin-bottom: 50px;
 
         &-item{
 

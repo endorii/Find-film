@@ -1,41 +1,40 @@
-import React, { Component } from "react";
+import React, { Component, useEffect, useState } from "react";
 import Slider from "react-slick";
 import './mainSlider.scss'
 import MoviesService from "../../../utils/services/MoviesService";
 
-export default class SimpleSlider extends Component {
+const SimpleSlider = ({RTL}) => {
 
-    // componentDidMount(){
-    //     const {getResponse} = MoviesService();
-    //     // getResponse().then(res => res.results.)
-    // }
+    const [slide, setSlide] = useState([])
+    const {getResponse, getPopularCartoons} = MoviesService();
 
-    render() {
-        const settings = {
-            arrows: true,
-            autoplay: true,
-            dots: true,
-            infinite: true,
-            autoplaySpeed: 5000,
-            speed: 1000,
-            slidesToShow: 1,
-            slidesToScroll: 1
-        };
+    useEffect(() => { 
+        getResponse().then(res => setSlide(res.results.map(item => item.poster_path)));
+    }, [])
 
-        return (
-            <div className="sliderMain">
-                <Slider {...settings}>
-                    <div>
-                        <img style={{margin: '0 auto', height: '800px', width: "100%", 'objectFit': 'contain'}} src="https://i.ytimg.com/vi/aEr6K1bwIVs/maxresdefault.jpg" alt="" />
-                    </div>
-                    <div>
-                        <img style={{margin: '0 auto', height: '800px', width: "100%", 'objectFit': 'contain'}} src="https://corgit.xyz/wp-content/uploads/2019/08/-%D0%BA%D1%80%D0%B5%D0%BC%D0%BD%D0%B8%D0%B5%D0%B2%D0%B0%D1%8F-%D0%B4%D0%BE%D0%BB%D0%B8%D0%BD%D0%B0-6-%D1%81%D0%B5%D0%B7%D0%BE%D0%BD-e1566218223108.png" alt="" />
-                    </div>
-                    <div>
-                        <img style={{margin: '0 auto', height: '800px', width: "100%", 'objectFit': 'contain'}} src="https://streamcoimg-a.akamaihd.net/000/154/2668/1542668-Banner-L2-6217afd79a9680d04ea21d06810c1795.jpg" alt="" />
-                    </div>
-                </Slider>
-            </div>
-        );
-    }
+    const settings = {
+        autoplay: true,
+        infinite: true,
+        speed: 6000,
+        autoplaySpeed: 6000,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        pauseOnHover: false,
+        variableWidth: true,
+        adaptiveHeight: true,
+        cssEase: "linear",
+        rtl: RTL
+    };
+
+    return (
+        <div className="sliderMain">
+            <Slider {...settings}>
+                {slide.map((item, i) => (
+                    <img key={i} className='single_item-img' src={`https://image.tmdb.org/t/p/w500${item}`} alt="" />
+                ))}
+            </Slider>
+        </div>
+    );
 }
+
+export default SimpleSlider;

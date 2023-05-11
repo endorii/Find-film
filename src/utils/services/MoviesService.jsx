@@ -43,12 +43,17 @@ const MoviesService = () => {
 		return res;
 	};
 
+	const searchMovies = async (query) => {
+        const res = await request(`https://api.themoviedb.org/3/search/movie?${_apiKey}&query=${query}`);
+		return res;
+    };
+
 	// const getPopularPosters = async () => {
 	// 	const res = await request(``);
 	// 	return res;
 	// }
 
-    return {getResponse, getPopularCartoons, getPopularAnime, getPopularSeries, getFilmById, getVideo, getFilmsByGenreId};
+    return {getResponse, getPopularCartoons, getPopularAnime, getPopularSeries, getFilmById, getVideo, getFilmsByGenreId, searchMovies};
 
 }
 

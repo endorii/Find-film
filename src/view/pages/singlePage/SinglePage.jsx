@@ -1,5 +1,4 @@
 import './singlePage.scss';
-import MainNavbar from '../../layouts/Navbar/Navbar';
 import MoviesService from '../../../utils/services/MoviesService';
 import { useEffect, useState } from 'react';
 
@@ -30,7 +29,6 @@ const SinglePage = () => {
 
     return (
         <>
-            <MainNavbar/>
             <div className="single">
                 <li className="single_item">
                     <div className="single_item-wrapper">

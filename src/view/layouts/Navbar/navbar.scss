@@ -1,11 +1,21 @@
 .logo{
     color: #92a4b1;
     font-size: 40px;
-    margin-right: 10%;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-right: 15%;
     &:hover{
         color: white;
     }
 }
+
+.nav_main{
+    top: 0;
+    z-index: 2;
+    position: sticky;
+    backdrop-filter: blur(20px);
+    background: #00000077;
+} 
 
 .nav_item{
     align-self: center;
@@ -20,13 +30,12 @@
 }
 
 .me-auto{
-
     display: flex;
     gap: 20px;
 }
 .nav-link{
     color: #92a4b1;
-
+    font-size: 20px;
     &:hover{
         color: white;
     }
@@ -37,7 +46,6 @@
 }
 
 .navbar-nav .show>.nav-link{
-    
-        color: white;
+    color: white;
 
 }

@@ -1,14 +1,11 @@
 import React, { Component } from 'react';
 import './popular.scss';
-import Arrow from '../../assets/images/white.png';
-import { handleScroll } from '../../config/helpers/helpers';
+import ArrowRight from '../../assets/images/white.png';
+import ArrowLeft from '../../assets/images/white.png';
+import { handleScrollLeft, handleScrollRight } from '../../config/helpers/helpers';
 import { Link } from 'react-router-dom';
 
 class Popular extends Component {
-    constructor(props) {
-        super(props);
-    }
-
     componentDidMount() {
         this.props.getPopular().then(res => this.props.setMoviesList(res.results));
     }
@@ -16,8 +13,6 @@ class Popular extends Component {
     onScrollToTop = () => {
         window.scrollTo(0, 0);
     }
-
-    
     
     render() {
 
@@ -27,9 +22,14 @@ class Popular extends Component {
                     <h2>{this.props.seth2}</h2>
                 </div>
                 <div 
-                    className="scroll-button" 
-                    onClick={() => handleScroll(this.props.tagSelector)}>
-                    <img src={Arrow} alt="scroll right" />
+                    className="scroll-button-right" 
+                    onClick={() => handleScrollRight(this.props.tagSelector)}>
+                    <img src={ArrowRight} alt="scroll right" />
+                </div>
+                <div 
+                    className="scroll-button-left" 
+                    onClick={() => handleScrollLeft(this.props.tagSelector)}>
+                    <img src={ArrowLeft} alt="scroll right" />
                 </div>
 
                 <div className={this.props.tagSelector.substring(1)}>

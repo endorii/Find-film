@@ -1,6 +1,11 @@
 .sliderMain{
+    height: auto;
     display: flex;
     flex-direction: column;
     overflow: hidden;
     // align-items: center;
+}
+
+.single_item-img{
+    padding:0 5px;
 }

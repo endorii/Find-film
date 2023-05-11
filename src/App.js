@@ -4,6 +4,8 @@ import { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import SinglePage from './view/pages/singlePage/SinglePage';
 import GlobalFilms from './view/pages/GlobalFilms/GlobalFilms';
+import MainNavbar from './view/layouts/Navbar/Navbar';
+import Footer from './view/layouts/Footer/Footer';
 
 function App() {
 
@@ -16,6 +18,7 @@ function App() {
     return (
         <Router>
             <div className="App">
+                <MainNavbar/>
                 <Routes>
 
                     <Route path="/" element={<Main 
@@ -39,6 +42,7 @@ function App() {
                     <Route path="/tv" element={<GlobalFilms mainGenre={'10749'} mainWithoutGenre={'18,16'}/>}/>
                     
                 </Routes>
+                <Footer/>
             </div>
         </Router>
     );

@@ -22,9 +22,6 @@ const GlobalFilms = ({mainGenre, mainWithoutGenre, origLang = ''}) => {
 
     return (
         <>
-            <MainNavbar/>
-
-
             <div className="genres">
                 <h3>Filters:</h3>
                 <ul className="genres_list">
