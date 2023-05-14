@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/find-film/static/css/main.982c6e12.css",
-    "main.js": "/find-film/static/js/main.1608dce8.js",
-    "static/media/pixar.png": "/find-film/static/media/pixar.f331750a060fe06dd97e.png",
-    "static/media/spotify.png": "/find-film/static/media/spotify.0c4ae91bae23217d39c9.png",
-    "static/media/dreamworks.png": "/find-film/static/media/dreamworks.c955cc1be6228e06423c.png",
-    "static/media/marvel.png": "/find-film/static/media/marvel.c62c859021025ac58899.png",
-    "static/media/netflix.png": "/find-film/static/media/netflix.77ba64d8813d5a26e7e7.png",
-    "static/media/universal.png": "/find-film/static/media/universal.2b3db18850dbe30b12b4.png",
-    "static/media/disney.png": "/find-film/static/media/disney.362dcc77888e94030e01.png",
-    "static/media/sony.png": "/find-film/static/media/sony.6b9d525473e3bea99f56.png",
-    "static/media/twitter.svg": "/find-film/static/media/twitter.4d3c497518f671a78f72a2ecd98afeac.svg",
-    "static/media/telegram.svg": "/find-film/static/media/telegram.7f7be5458f5858a7715ff125e2353c1e.svg",
-    "index.html": "/find-film/index.html",
-    "static/media/instagram.svg": "/find-film/static/media/instagram.90d0c98f2b43ff56a3c518a71eed962c.svg",
-    "main.982c6e12.css.map": "/find-film/static/css/main.982c6e12.css.map",
-    "main.1608dce8.js.map": "/find-film/static/js/main.1608dce8.js.map"
+    "main.css": "/Find-film/static/css/main.982c6e12.css",
+    "main.js": "/Find-film/static/js/main.6fdff1dd.js",
+    "static/media/pixar.png": "/Find-film/static/media/pixar.f331750a060fe06dd97e.png",
+    "static/media/spotify.png": "/Find-film/static/media/spotify.0c4ae91bae23217d39c9.png",
+    "static/media/dreamworks.png": "/Find-film/static/media/dreamworks.c955cc1be6228e06423c.png",
+    "static/media/marvel.png": "/Find-film/static/media/marvel.c62c859021025ac58899.png",
+    "static/media/netflix.png": "/Find-film/static/media/netflix.77ba64d8813d5a26e7e7.png",
+    "static/media/universal.png": "/Find-film/static/media/universal.2b3db18850dbe30b12b4.png",
+    "static/media/disney.png": "/Find-film/static/media/disney.362dcc77888e94030e01.png",
+    "static/media/sony.png": "/Find-film/static/media/sony.6b9d525473e3bea99f56.png",
+    "static/media/twitter.svg": "/Find-film/static/media/twitter.4d3c497518f671a78f72a2ecd98afeac.svg",
+    "static/media/telegram.svg": "/Find-film/static/media/telegram.7f7be5458f5858a7715ff125e2353c1e.svg",
+    "index.html": "/Find-film/index.html",
+    "static/media/instagram.svg": "/Find-film/static/media/instagram.90d0c98f2b43ff56a3c518a71eed962c.svg",
+    "main.982c6e12.css.map": "/Find-film/static/css/main.982c6e12.css.map",
+    "main.6fdff1dd.js.map": "/Find-film/static/js/main.6fdff1dd.js.map"
   },
   "entrypoints": [
     "static/css/main.982c6e12.css",
-    "static/js/main.1608dce8.js"
+    "static/js/main.6fdff1dd.js"
   ]
 }
