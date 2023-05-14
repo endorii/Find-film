@@ -3,8 +3,6 @@ import MoviesService from "../../utils/services/MoviesService";
 import './movieSearch.scss';
 import { Link } from "react-router-dom";
 
-
-
 const MovieSearch = () => {
     const [searchTerm, setSearchTerm] = useState("");
     const [movies, setMovies] = useState([]);
@@ -31,7 +29,7 @@ const MovieSearch = () => {
                 <input
                 className="search_form-input"
                 type="text"
-                placeholder="Введіть назву фільму"
+                placeholder="Name of the movie..."
                 value={searchTerm}
                 onChange={(event) => setSearchTerm(event.target.value)}
                 />

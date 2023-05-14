@@ -1,145 +1,74 @@
-import MainNavbar from "../../layouts/Navbar/Navbar";
 import MoviesService from "../../../utils/services/MoviesService";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import './globalFilms.scss'
+import FilterForGenres from "../../layouts/FilterGenres/FilterGenres";
+import ReactPaginate from 'react-paginate';
 
-const GlobalFilms = ({mainGenre, mainWithoutGenre, origLang = ''}) => {
+import './globalFilms.scss';
+
+const GlobalFilms = ({ mainGenre, mainWithoutGenre, origLang = '' }) => {
 
     const [films, setFilms] = useState([]);
     const [genre, setGenre] = useState(mainGenre);
-    const {getFilmsByGenreId} = MoviesService();
+    const { getFilmsByGenreId } = MoviesService();
+
+    const [currentPage, setCurrentPage] = useState(0);
+    const [totalPages, setTotalPages] = useState(0);
+    const filmsPerPage = 20;
 
     useEffect(() => {
-        getFilmsByGenreId(genre, mainWithoutGenre, origLang).then(res => setFilms(res.results));
-    }, [genre])
+        getFilmsByGenreId(genre, mainWithoutGenre, origLang, currentPage).then(res => {
+        setFilms(res.results);
+        setTotalPages(res.total_pages);
+        });
+    }, [genre, mainWithoutGenre, origLang, currentPage, filmsPerPage]);
 
     const onScrollToTop = () => {
         window.scrollTo(0, 0);
-    }
+    };
 
-    console.log(films);
+    const handlePageChange = (selectedPage) => {
+        setCurrentPage(selectedPage.selected);
+    };
 
+    const paginatedFilms = films.slice(0, filmsPerPage);
+
+
+  
     return (
         <>
-            <div className="genres">
-                <h3>Filters:</h3>
-                <ul className="genres_list">
-                    <li className="genres_list-item">
-                        <button onClick={() => setGenre(mainGenre+',28')}>
-                            Action
-                        </button>
-                    </li>
-                    <li className="genres_list-item">
-                        <button onClick={() => setGenre(mainGenre+',12')}>
-                            Adventure 
-                        </button>
-                    </li>
-                    <li className="genres_list-item">
-                        <button onClick={() => setGenre(mainGenre+',16')}>
-                            Animation 
-                        </button>
-                    </li>
+            <FilterForGenres mainGenre={mainGenre} setGenre={setGenre} />
 
-                    <li className="genres_list-item">
-                        <button onClick={() => setGenre(mainGenre+',35')}>
-                            Comedy 
-                        </button>
-                    </li>
-                    <li className="genres_list-item">
-                        <button onClick={() => setGenre(mainGenre+',80')}>
-                        Crime 
-                        </button>
-                    </li>
-                    <li className="genres_list-item">
-                        <button onClick={() => setGenre(mainGenre+',99')}>
-                        Documentary 
-                        </button>
-                    </li>
-                    <li className="genres_list-item">
-                        <button onClick={() => setGenre(mainGenre+',18')}>
-                        Drama
-                        </button>
-                    </li>
-                    <li className="genres_list-item">
-                        <button onClick={() => setGenre(mainGenre+',10751')}>
-                        Family
-                        </button>
-                    </li>
-                    <li className="genres_list-item">
-                        <button onClick={() => setGenre(mainGenre+',14')}>
-                        Fantasy
-                        </button>
-                    </li>
-                    <li className="genres_list-item">
-                        <button onClick={() => setGenre(mainGenre+',36')}>
-                        History 
-                        </button>
-                    </li>
-                    <li className="genres_list-item">
-                        <button onClick={() => setGenre(mainGenre+',27')}>
-                        Horror
-                        </button>
-                    </li>
-                    <li className="genres_list-item">
-                        <button onClick={() => setGenre(mainGenre+',10402')}>
-                        Music
-                        </button>
-                    </li>
-                    <li className="genres_list-item">
-                        <button onClick={() => setGenre(mainGenre+',9648')}>
-                        Mystery 
-                        </button>
-                    </li>
-                    <li className="genres_list-item">
-                        <button onClick={() => setGenre(mainGenre+',10749')}>
-                        Romance
-                        </button>
-                    </li>
-                    <li className="genres_list-item">
-                        <button onClick={() => setGenre(mainGenre+',878')}>
-                        Science Fiction
-                        </button>
-                    </li>
-                    <li className="genres_list-item">
-                        <button onClick={() => setGenre(mainGenre+',10770')}>
-                        TV Movie
-                        </button>
-                    </li>
-                    <li className="genres_list-item">
-                        <button onClick={() => setGenre(mainGenre+',53')}>
-                        Thriller 
-                        </button>
-                    </li>
-                    <li className="genres_list-item">
-                        <button onClick={() => setGenre(mainGenre+',10752')}>
-                        War 
-                        </button>
-                    </li>
-                    <li className="genres_list-item">
-                        <button onClick={() => setGenre(mainGenre+',37')}>
-                        Western 
-                        </button>
-                    </li>
-                </ul>
-            </div>
-
-            <div className="global">
-                <ul className="global_list">
-                    {films.map(film => (
+                <div className="global">
+                    <ul className="global_list">
+                    {paginatedFilms.map(film => (
                         <li className="global_list-item" key={film.id} onClick={onScrollToTop}>
-                            <Link to={{ pathname: `/production/${film.id}`, state: { id: film.id } }}>
-                                <div className="global_list-item-img">
-                                    <img src={`https://image.tmdb.org/t/p/w500${film.poster_path}`} alt="" />
-                                    <div className="global_list-item-title">{film.title === undefined ? film.name : film.title}</div>
-                                </div>
-                            </Link>
+                        <Link to={{ pathname: `/production/${film.id}`, state: { id: film.id } }}>
+                            <div className="global_list-item-img">
+                            <img src={`https://image.tmdb.org/t/p/w500${film.poster_path}`} alt="" />
+                            <div className="global_list-item-title">{film.title === undefined ? film.name : film.title}</div>
+                            </div>
+                        </Link>
                         </li>
                     ))}
-                </ul>
-            </div>
+                    </ul>
+                </div>
+
+            <ReactPaginate
+                className="pagination"
+                previousLabel={'<<'}
+                nextLabel={'>>'}
+                breakLabel={'...'}
+                breakClassName={'break-me'}
+                pageCount={totalPages/20}
+                activeClassName='pagination_active'
+                activeLinkClassName='pagination_active'
+                marginPagesDisplayed={3}
+                pageRangeDisplayed={3}
+                onPageChange={handlePageChange}
+            />
         </>
-    )
-}
+    );
+};
 
 export default GlobalFilms;

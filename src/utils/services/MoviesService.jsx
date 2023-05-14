@@ -38,8 +38,8 @@ const MoviesService = () => {
 		return res;
 	};
 
-	const getFilmsByGenreId = async (genreId, widthout, origLang) => {
-		const res = await request(`https://api.themoviedb.org/3/discover/movie?${_apiKey}&sort_by=popularity.desc${origLang}&with_genres=${genreId}&without_genres=${widthout}}`);
+	const getFilmsByGenreId = async (genreId, widthout, origLang, currentPage = 1) => {
+		const res = await request(`https://api.themoviedb.org/3/discover/movie?${_apiKey}&sort_by=popularity.desc${origLang}&with_genres=${genreId}&without_genres=${widthout}}&page=${currentPage+1}`);
 		return res;
 	};
 
