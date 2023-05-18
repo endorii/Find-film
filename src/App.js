@@ -21,7 +21,7 @@ function App() {
                 <MainNavbar/>
                 <Routes>
 
-                    <Route path="/" element={<Main 
+                    <Route path="/Find-film" element={<Main 
                         moviesList={moviesList} 
                         setMoviesList={setMoviesList} 
 
@@ -34,12 +34,12 @@ function App() {
                         tvList={tvList}
                         setTVList={setTVList}
                     />}/>
-                    <Route path="/production/:filmId" element={<SinglePage/>}/>
+                    <Route path="/Find-filmproduction/:filmId" element={<SinglePage/>}/>
 
-                    <Route path="/films" element={<GlobalFilms mainGenre={'18'} mainWithoutGenre={'16,10749'}/>}/>
-                    <Route path="/cartoons" element={<GlobalFilms mainGenre={'16'} mainWithoutGenre={'18,10749'}/>}/>
-                    <Route path="/anime" element={<GlobalFilms mainGenre={'16'} mainWithoutGenre={'18,10749'} origLang={'&with_original_language=ja'}/>}/>
-                    <Route path="/tv" element={<GlobalFilms mainGenre={'10749'} mainWithoutGenre={'18,16'}/>}/>
+                    <Route path="/Find-filmfilms" element={<GlobalFilms mainGenre={'18'} mainWithoutGenre={'16,10749'}/>}/>
+                    <Route path="/Find-filmcartoons" element={<GlobalFilms mainGenre={'16'} mainWithoutGenre={'18,10749'}/>}/>
+                    <Route path="/Find-filmanime" element={<GlobalFilms mainGenre={'16'} mainWithoutGenre={'18,10749'} origLang={'&with_original_language=ja'}/>}/>
+                    <Route path="/Find-filmtv" element={<GlobalFilms mainGenre={'10749'} mainWithoutGenre={'18,16'}/>}/>
                     
                 </Routes>
                 <Footer/>

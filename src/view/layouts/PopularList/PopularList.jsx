@@ -1,12 +1,12 @@
 import Popular from "../../../modules/Popular/Popular";
 
-const PopularList = ({moviesList, setMoviesList, popCartoonsList, setPopCartoonsList, popAnimeList, setPopAnimeList, setTVList, tvList, getResponse, getPopularAnime, getPopularCartoons, getPopularSeries }) => {
+const PopularList = ({moviesList, setMoviesList, popCartoonsList, setPopCartoonsList, popAnimeList, setPopAnimeList, setTVList, tvList, getPopularAnime, getPopularCartoons, getPopularSeries, getPopularFilms }) => {
     return (
         <div className="popular_wrapper">
             <Popular 
                 moviesList={moviesList} 
                 setMoviesList={setMoviesList} 
-                getPopular={getResponse} 
+                getPopular={getPopularFilms} 
                 tagSelector={'.popular_list-films'}
                 seth2={'Popular films'}/>
             <Popular 

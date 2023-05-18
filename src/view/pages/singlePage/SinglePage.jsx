@@ -19,7 +19,7 @@ const SinglePage = () => {
     useEffect(()=>{
         getFilmById(filmId).then(res => setMovie(res));
         getVideo(filmId).then(video => setVideoKey(video.results[0].key));
-    }, [filmId])
+    })
 
     console.log(movie);
     console.log(videoKey);
@@ -59,7 +59,7 @@ const SinglePage = () => {
                         </div>
                     </div>
                     <h4>Official trailer</h4>
-                    <iframe width='300px' height='300px'
+                    <iframe title="movieYoutubeVideo"
                         src={`https://www.youtube.com/embed/${videoKey}`}>
                     </iframe>
                 </li>

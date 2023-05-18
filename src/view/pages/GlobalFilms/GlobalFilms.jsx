@@ -21,7 +21,7 @@ const GlobalFilms = ({ mainGenre, mainWithoutGenre, origLang = '' }) => {
         setFilms(res.results);
         setTotalPages(res.total_pages);
         });
-    }, [genre, mainWithoutGenre, origLang, currentPage, filmsPerPage]);
+    });
 
     const onScrollToTop = () => {
         window.scrollTo(0, 0);
@@ -43,7 +43,7 @@ const GlobalFilms = ({ mainGenre, mainWithoutGenre, origLang = '' }) => {
                     <ul className="global_list">
                     {paginatedFilms.map(film => (
                         <li className="global_list-item" key={film.id} onClick={onScrollToTop}>
-                        <Link to={{ pathname: `/production/${film.id}`, state: { id: film.id } }}>
+                        <Link to={{ pathname: `/Find-film/production/${film.id}`, state: { id: film.id } }}>
                             <div className="global_list-item-img">
                             <img src={`https://image.tmdb.org/t/p/w500${film.poster_path}`} alt="" />
                             <div className="global_list-item-title">{film.title === undefined ? film.name : film.title}</div>

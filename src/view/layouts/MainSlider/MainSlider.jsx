@@ -1,4 +1,4 @@
-import React, { Component, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Slider from "react-slick";
 import './mainSlider.scss'
 import MoviesService from "../../../utils/services/MoviesService";
@@ -6,11 +6,11 @@ import MoviesService from "../../../utils/services/MoviesService";
 const SimpleSlider = ({RTL}) => {
 
     const [slide, setSlide] = useState([])
-    const {getResponse, getPopularCartoons} = MoviesService();
+    const { getPopularCartoons} = MoviesService();
 
     useEffect(() => { 
-        getResponse().then(res => setSlide(res.results.map(item => item.poster_path)));
-    }, [])
+        getPopularCartoons().then(res => setSlide(res.results.map(item => item.poster_path)));
+    })
 
     const settings = {
         autoplay: true,
