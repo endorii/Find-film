@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Find-film/static/css/main.faf31dca.css",
-    "main.js": "/Find-film/static/js/main.c95b44b1.js",
+    "main.js": "/Find-film/static/js/main.38110bb2.js",
     "static/media/pixar.png": "/Find-film/static/media/pixar.f331750a060fe06dd97e.png",
     "static/media/spotify.png": "/Find-film/static/media/spotify.0c4ae91bae23217d39c9.png",
     "static/media/dreamworks.png": "/Find-film/static/media/dreamworks.c955cc1be6228e06423c.png",
@@ -15,10 +15,10 @@
     "index.html": "/Find-film/index.html",
     "static/media/instagram.svg": "/Find-film/static/media/instagram.90d0c98f2b43ff56a3c518a71eed962c.svg",
     "main.faf31dca.css.map": "/Find-film/static/css/main.faf31dca.css.map",
-    "main.c95b44b1.js.map": "/Find-film/static/js/main.c95b44b1.js.map"
+    "main.38110bb2.js.map": "/Find-film/static/js/main.38110bb2.js.map"
   },
   "entrypoints": [
     "static/css/main.faf31dca.css",
-    "static/js/main.c95b44b1.js"
+    "static/js/main.38110bb2.js"
   ]
 }
